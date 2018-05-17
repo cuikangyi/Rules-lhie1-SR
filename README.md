@@ -9,4 +9,4 @@
 
 ### 下载脚本
 
-[下载Rules-lhie1](https://xteko.com/redir?name=Rules-lhie1-SR&url=https://raw.githubusercontent.com/c7i/Rules-lhie1-SR/master/Rules-lhie1-SR/.output/Rules-lhie1-SR.box)
+[下载Rules-lhie1](https://xteko.com/redir?name=Rules-lhie1-SR&url=https://raw.githubusercontent.com/c7i/Rules-lhie1-SR/master/.output/Rules-lhie1-SR.box)
