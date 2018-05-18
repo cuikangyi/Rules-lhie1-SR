@@ -503,7 +503,16 @@ function makeConf(params) {
       promiseArray[7] = emptyPromise(onPgs)
     }
 
+    let replaceRule = function(content) {
+      content = content.replace(/🍎 Only/g, 'DIRECT')
+      content = content.replace(/🍃 Proxy/g, 'PROXY')
+      content = content.replace(/🍂 Domestic/g, 'DIRECT')
+      content = content.replace(/☁️ Others/g, 'DIRECT')
+      return content;
+    }    
+
     Promise.all(promiseArray).then(v => {
+      v = v.map(i => replaceRule(i))
       console.log(v)
       prototype = v[0]
       rules += `\n${v[1]}\n${v[2]}\n${v[3]}\n${v[4]}\n`
@@ -561,10 +570,7 @@ function makeConf(params) {
         prototype = prototype.replace('# MITM', '')
       }
 
-      prototype = prototype.replace(/🍎 Only/g, 'DIRECT')
-      prototype = prototype.replace(/🍃 Proxy/g, 'PROXY')
-      prototype = prototype.replace(/🍂 Domestic/g, 'DIRECT')
-      prototype = prototype.replace(/☁️ Others/g, 'DIRECT')
+      prototype = replaceRule(prototype)
 
       $console.info(prototype)
 
