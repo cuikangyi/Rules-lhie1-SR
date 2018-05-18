@@ -280,7 +280,7 @@ function renderUI() {
                 title: 'OK',
                 handler: () => {
                   setDefaultSettings(true)
-                  $addin.run($addin.current)
+                  $addin.run('Rules-lhie1-SR')
                 }
               }]
             })
@@ -457,8 +457,8 @@ function makeConf(params) {
       hostname: 'https://raw.githubusercontent.com/lhie1/Rules/master/Auto/Hostname.conf',
     }
     let advanceSettings = JSON.parse($file.read(FILE).string)
-    let workspace = advanceSettings.workspace
-    let usualData = workspace.usualData
+    let workspace = advanceSettings.workspace || {}
+    let usualData = workspace.usualData || []
 
     let usualValue = function (key) {
       return usualData.find(i => i.title.text == key) ? usualData.find(i => i.title.text == key).title.bgcolor : false
